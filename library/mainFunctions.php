@@ -1,10 +1,10 @@
 <?php
 
-function loadPage($smarty, $controllerName, $actionName = 'index') {
+function loadPage($smarty, $controllerName, $actionName = 'index', $db) {
     include_once PathPrefix . $controllerName . PathPostfix;
 
     $function = $actionName . 'Action';
-    $function($smarty);
+    $function($smarty, $db);
 }
 
 function loadTemplate($smarty, $templateName) {
