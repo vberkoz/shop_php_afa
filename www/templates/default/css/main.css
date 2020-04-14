@@ -42,6 +42,7 @@ h1 {
 
 #footer {
     clear: both;
+    text-align: center;
 }
 
 .menuCaption {
@@ -51,4 +52,9 @@ h1 {
 
 .cartBox {
     padding: 5px 0 5px 0;
+}
+
+.active {
+    background-color: blue;
+    color: white;
 }
