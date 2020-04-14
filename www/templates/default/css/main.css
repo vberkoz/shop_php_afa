@@ -5,6 +5,11 @@ body {
     font-size: 11pt;
 }
 
+.container {
+    margin: 0 auto;
+    width: 1200px;
+}
+
 h1 {
     font-family: "Times New Roman", serif;
     font-size: 26pt;
@@ -30,7 +35,7 @@ h1 {
 }
 
 #centerColumn {
-    width: 600px;
+    width: 900px;
     float: left;
     padding-left: 90px;
 }
