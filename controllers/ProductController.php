@@ -3,15 +3,15 @@
 include_once '../models/CategoriesModel.php';
 include_once '../models/ProductsModel.php';
 
-function indexAction($smarty, $db, $id) {
+function IndexAction($smarty, $db, $id) {
     $rsCategories = getAllMainCatsWithChildren($db);
-    $rsProducts = getLastProducts(20, $db);
+    $rsProduct = getProduct($id, $db);
 
-    $smarty->assign('pageTitle', 'Home');
+    $smarty->assign('pageTitle', 'Product');
     $smarty->assign('rsCategories', $rsCategories);
-    $smarty->assign('rsProducts', $rsProducts);
+    $smarty->assign('rsProduct', $rsProduct);
 
     loadTemplate($smarty, 'header');
-    loadTemplate($smarty, 'index');
+    loadTemplate($smarty, 'product');
     loadTemplate($smarty, 'footer');
 }

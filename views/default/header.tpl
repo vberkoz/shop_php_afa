@@ -6,7 +6,7 @@
 <body>
 <div class="container">
 <div id="header">
-    <h1>My Shop - ecommerce site</h1>
+    {*<h1>My Shop - ecommerce site</h1>*}
 </div>
 
 {include file='leftcolumn.tpl'}

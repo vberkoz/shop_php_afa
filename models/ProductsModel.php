@@ -67,3 +67,15 @@ function getProductsByCategory($catId, $limit = null, $db) {
     }
     return $products;
 }
+
+function getProduct($id, $db) {
+    $id = intval($id);
+
+    $sql = "SELECT *
+            FROM products
+            WHERE id = {$id}";
+
+    $result = $db->query($sql);
+    $result->setFetchMode(PDO::FETCH_ASSOC);
+    return $result->fetch();
+}
