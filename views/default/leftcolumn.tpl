@@ -1,4 +1,5 @@
 <div id="leftColumn">
+    <div class="menuCaption">Menu:</div>
     <ul>
         {foreach $rsCategories as $item}
             <li>
@@ -32,4 +33,10 @@
             </li>
         {/foreach}
     </ul>
+
+    <div class="menuCaption">Cart:</div>
+    <a href="/cart/" title="Go to cart">Cart</a>
+    <span id="cartCntItems">
+        {if $cartCntItems > 0}{$cartCntItems}{else}empty{/if}
+    </span>
 </div>
