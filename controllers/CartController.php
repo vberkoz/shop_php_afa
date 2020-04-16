@@ -31,3 +31,18 @@ function removefromcartAction($smarty, $db, $id) {
 
     echo json_encode($resData);
 }
+
+function indexAction($smarty, $db, $id) {
+    $itemsIds = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
+
+    $rsCategories = getAllMainCatsWithChildren($db);
+    $rsProducts = getProductsByIds($itemsIds, $db);
+
+    $smarty->assign('pageTitle', 'Cart');
+    $smarty->assign('rsCategories', $rsCategories);
+    $smarty->assign('rsProducts', $rsProducts);
+
+    loadTemplate($smarty, 'header');
+    loadTemplate($smarty, 'cart');
+    loadTemplate($smarty, 'footer');
+}

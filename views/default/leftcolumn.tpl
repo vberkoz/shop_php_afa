@@ -35,7 +35,7 @@
     </ul>
 
     <div class="menuCaption">Cart:</div>
-    <a href="/cart/" title="Go to cart">Cart</a>
+    <a href="/cart" title="Go to cart">Cart</a>
     <span id="cartCntItems">
         {if $cartCntItems > 0}{$cartCntItems}{else}empty{/if}
     </span>

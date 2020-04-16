@@ -79,3 +79,27 @@ function getProduct($id, $db) {
     $result->setFetchMode(PDO::FETCH_ASSOC);
     return $result->fetch();
 }
+
+function getProductsByIds($itemsIds, $db) {
+    $strIds = implode($itemsIds, ', ');
+    $sql = "SELECT *
+            FROM products
+            WHERE id IN ({$strIds})";
+
+    $rs = $db->query($sql);
+
+    $i = 0;
+    $products = array();
+    while ($row = $rs->fetch()) {
+        $products[$i]['id'] = $row['id'];
+        $products[$i]['category_id'] = $row['category_id'];
+        $products[$i]['name'] = $row['name'];
+        $products[$i]['description'] = $row['description'];
+        $products[$i]['price'] = $row['price'];
+        $products[$i]['image'] = $row['image'];
+        $products[$i]['status'] = $row['status'];
+        $i++;
+    }
+
+    return $products;
+}

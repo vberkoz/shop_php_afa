@@ -29,3 +29,11 @@ function removeFromCart(itemId) {
         }
     });
 }
+
+function recalculatePrice(productId) {
+    let newCnt = $('#itemCnt_' + productId).val();
+    let itemUnitPrice = $('#itemUnitPrice_' + productId).attr('value');
+    let itemTotalPrice = newCnt * itemUnitPrice;
+
+    $('#itemTotalPrice_' + productId).html(itemTotalPrice);
+}
