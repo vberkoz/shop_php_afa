@@ -32,7 +32,17 @@
                 {/if}
             </li>
         {/foreach}
-    </ul>
+    </ul><br>
+
+    <div id="registerBox">
+        <div class="menuCaption showHidden" onclick="showRegisterBox();">Registration</div><br>
+        <div id="registerBoxHidden">
+            Email:<br><input type="text" id="email" name="email" value=""><br><br>
+            Password:<br><input type="password" id="pwd1" name="pwd1" value=""><br><br>
+            Repeat password:<br><input type="password" id="pwd2" name="pwd2" value=""><br><br>
+            <input type="button" onclick="registerNewUser();" value="Register">
+        </div>
+    </div><br>
 
     <div class="menuCaption">Cart:</div>
     <a href="/cart" title="Go to cart">Cart</a>

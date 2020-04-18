@@ -37,3 +37,34 @@ function recalculatePrice(productId) {
 
     $('#itemTotalPrice_' + productId).html(itemTotalPrice);
 }
+
+function getData(obj_form) {
+    let hData = {};
+    $('input, textarea, select', obj_form).each(function () {
+        if (this.name && this.name !== '') {
+            hData[this.name] = this.value;
+        }
+    });
+    return hData;
+}
+
+function registerNewUser() {
+    let postData = getData('#registerBox');
+
+    $.ajax({
+        type: 'POST',
+        async: false,
+        url: "/user/register",
+        data: postData,
+        dataType: 'json',
+        success: function (data) {
+            if (data['success']) {
+                alert('User successfully registered');
+
+                $('#registerBox').hide();
+            } else {
+                alert(data['message']);
+            }
+        }
+    });
+}
