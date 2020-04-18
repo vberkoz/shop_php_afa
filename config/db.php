@@ -1,6 +1,6 @@
 <?php
 
-$dblocation = "127.0.0.1";
+$dblocation = "localhost";
 $dbname = "shop_php_afa";
 $dbuser = "root";
 $dbpassword = "";
